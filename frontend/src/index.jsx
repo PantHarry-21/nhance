@@ -1,18 +1,11 @@
-// frontend/src/App.jsx
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import PartnerDashboard from "./pages/partner/PartnerDashboard";
-import UserHome from "./pages/user/Home";
+import ReactDOM from "react-dom/client";
+import App from "./App";  // Adjust if App is in a different location
+import "./index.css";  // Make sure this exists or use your own CSS
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
-  return (
-    <Routes>
-      <Route path="/admin" element={<AdminDashboard />} />
-      <Route path="/partner" element={<PartnerDashboard />} />
-      <Route path="/" element={<UserHome />} />
-    </Routes>
-  );
-}
-
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

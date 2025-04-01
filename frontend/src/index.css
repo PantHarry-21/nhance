@@ -1,7 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* src/index.css */
+/* Bootstrap Import */
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
+/* Custom styles (Optional) */
 body {
   font-family: sans-serif;
   background: #fff;

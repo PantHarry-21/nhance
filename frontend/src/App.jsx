@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+
 
 import Home from "./pages/user/Home";
 import BookingFlow from "./pages/user/BookingFlow";
