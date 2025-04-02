@@ -19,11 +19,11 @@ const MyBookings = () => {
   }, [email]);
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold text-purple-700 mb-4">My Bookings</h2>
+    <div className="container py-4">
+      <h2 className="text-primary fw-bold mb-4">My Bookings</h2>
       {bookings.map((booking, index) => (
-        <div key={index} className="bg-white rounded p-4 shadow mb-4">
-          <img src={booking.image_url} alt="Jewellery" className="rounded mb-2 w-full" />
+        <div key={index} className="card p-3 shadow-sm mb-4">
+          <img src={booking.image_url} alt="Jewellery" className="img-fluid rounded mb-2" />
           <p><strong>Address:</strong> {booking.address}</p>
           <p><strong>Status:</strong> {booking.status}</p>
         </div>

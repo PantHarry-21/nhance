@@ -26,17 +26,16 @@ const ConfirmBooking = () => {
   };
 
   return (
-    <div className="p-4 max-w-lg mx-auto">
-      <h2 className="text-xl font-bold text-purple-700 mb-4">Confirm Your Booking</h2>
-      <img src={imageUrl} alt="Jewellery" className="rounded w-full mb-4" />
-      <p><strong>Service:</strong> Gold Polishing</p>
-      <p><strong>Address:</strong> {address}</p>
-      <p className="text-sm text-gray-600 mt-2">
-        This is an estimated price. The final quote will be provided by the admin.
-      </p>
-      <button onClick={handleConfirm} className="mt-4 w-full bg-green-600 text-white py-2 rounded">
-        Confirm Booking
-      </button>
+    <div className="container py-5" style={{ maxWidth: "600px" }}>
+      <h2 className="text-primary fw-bold mb-4">Confirm Your Booking</h2>
+
+      <div className="card p-3 shadow-sm">
+        <img src={imageUrl} alt="Jewellery" className="img-fluid rounded mb-3" />
+        <p><strong>Service:</strong> Gold Polishing</p>
+        <p><strong>Address:</strong> {address}</p>
+        <p className="text-muted mt-2">This is an approximate price. Admin will send the final quotation.</p>
+        <button onClick={handleConfirm} className="btn btn-success w-100 mt-3">Confirm Booking</button>
+      </div>
     </div>
   );
 };

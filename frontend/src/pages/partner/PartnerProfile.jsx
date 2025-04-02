@@ -5,12 +5,13 @@ const PartnerProfile = () => {
   const email = localStorage.getItem("email");
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4 text-purple-700">Partner Profile</h2>
-      <div className="bg-white p-4 rounded shadow">
+    <div className="container py-4">
+      <h2 className="text-primary fw-bold mb-4">Partner Profile</h2>
+
+      <div className="card p-3 shadow-sm">
         <p><strong>Name:</strong> {name}</p>
         <p><strong>Email:</strong> {email}</p>
-        <button className="mt-4 bg-red-500 text-white px-4 py-1 rounded">Logout</button>
+        <button className="btn btn-danger mt-3">Logout</button>
       </div>
     </div>
   );

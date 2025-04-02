@@ -2,26 +2,34 @@ import React from "react";
 
 const AdminDashboard = () => {
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold text-purple-700 mb-4">Dashboard</h2>
+    <div className="container py-4">
+      <h2 className="mb-4 text-primary fw-bold">Dashboard</h2>
 
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="bg-white p-4 rounded shadow">📦 Total Bookings</div>
-        <div className="bg-white p-4 rounded shadow">👥 Total Users</div>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="font-semibold mb-2">Recent Requests</h3>
-          <button className="text-sm text-purple-600">View More</button>
+      <div className="row mb-4">
+        <div className="col-md-6 mb-3">
+          <div className="card p-3 shadow-sm">📦 Total Bookings</div>
         </div>
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="font-semibold mb-2">Completed Requests</h3>
+        <div className="col-md-6 mb-3">
+          <div className="card p-3 shadow-sm">👥 Total Users</div>
         </div>
       </div>
 
-      <div className="mt-6 bg-white p-4 rounded shadow">
-        <h3 className="font-semibold mb-2">Revenue Chart</h3>
+      <div className="row mb-4">
+        <div className="col-md-6 mb-3">
+          <div className="card p-3 shadow-sm">
+            <h5 className="card-title">Recent Requests</h5>
+            <button className="btn btn-link p-0">View More</button>
+          </div>
+        </div>
+        <div className="col-md-6 mb-3">
+          <div className="card p-3 shadow-sm">
+            <h5 className="card-title">Completed Requests</h5>
+          </div>
+        </div>
+      </div>
+
+      <div className="card p-4 shadow-sm">
+        <h5 className="card-title mb-3">Revenue Chart</h5>
         <p>[Chart Placeholder]</p>
       </div>
     </div>

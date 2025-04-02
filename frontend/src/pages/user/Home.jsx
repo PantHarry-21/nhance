@@ -1,47 +1,87 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const userName = localStorage.getItem("name");
-  const navigate = useNavigate();
-
-  const handleBookNow = () => {
-    const isLoggedIn = localStorage.getItem("token");
-    if (!isLoggedIn) {
-      alert("Please login to book a service.");
-      navigate("/login");
-    } else {
-      navigate("/upload-jewellery");
-    }
-  };
-
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold text-purple-700 mb-4">
-        Welcome {userName ? userName : "Guest"} 👋
-      </h2>
+    <div className="container">
+      {/* Hero Section with Logo and Search Bar */}
+      <section className="hero-section">
+        <img src="/images/logo.png" alt="NHance" className="logo" />
+        <h1>Welcome to <span style={{ color: '#F9A826' }}>NHance</span></h1>
+        <p>Your trusted jewellery services platform</p>
+        <div className="login-register-btns">
+          <input
+            className="search-bar"
+            type="text"
+            placeholder="Search jewelry services..."
+          />
+          <Link to="/login">
+            <button className="btn btn-outline-light ml-2">Login</button>
+          </Link>
+          <Link to="/register">
+            <button className="btn btn-light ml-2">Register</button>
+          </Link>
+        </div>
+      </section>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-        {[...Array(8)].map((_, i) => (
-          <div key={i} className="bg-white shadow p-4 rounded">
-            <p className="text-center font-semibold">Category {i + 1}</p>
+      {/* Featured Categories and Featured Services Side-by-Side */}
+      <section className="services-categories-section">
+        <div className="categories-section">
+          <div className="category-card">
+            <img src="/images/ring-icon.png" alt="Ring Cleaning" />
+            <h4>Ring Cleaning</h4>
+            <button className="btn btn-outline-light">View All</button>
           </div>
-        ))}
-      </div>
+          <div className="category-card">
+            <img src="/images/necklace-icon.png" alt="Necklace Polishing" />
+            <h4>Necklace Polishing</h4>
+            <button className="btn btn-outline-light">View All</button>
+          </div>
+          <div className="category-card">
+            <img src="/images/necklace-icon.png" alt="Necklace Polishing" />
+            <h4>Necklace Polishing</h4>
+            <button className="btn btn-outline-light">View All</button>
+          </div>
+        </div>
 
-      <button
-        onClick={handleBookNow}
-        className="bg-purple-600 text-white px-4 py-2 rounded"
-      >
-        Book Now
-      </button>
+        <div className="featured-services-section">
+          <div className="service-card">
+            <img src="/images/bracelet-shine.jpg" alt="Bracelet Shine" />
+            <h5>Bracelet Shine</h5>
+            <p>₹500</p>
+            <button className="btn btn-success">Book Now</button>
+          </div>
+          <div className="service-card">
+            <img src="/images/pendant-cleaning.jpg" alt="Pendant Cleaning" />
+            <h5>Pendant Cleaning</h5>
+            <p>₹800</p>
+            <button className="btn btn-success">Book Now</button>
+          </div>
+          <div className="service-card">
+            <img src="/images/pendant-cleaning.jpg" alt="Pendant Cleaning" />
+            <h5>Pendant Cleaning</h5>
+            <p>₹800</p>
+            <button className="btn btn-success">Book Now</button>
+          </div>
+        </div>
+      </section>
 
-      <h3 className="mt-6 font-bold text-xl">Featured Services</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2 mb-6">
-        <img src="/promo1.jpg" alt="Promo 1" className="rounded" />
-        <img src="/promo2.jpg" alt="Promo 2" className="rounded" />
-        <img src="/promo3.jpg" alt="Promo 3" className="rounded" />
-      </div>
+      {/* Promotional Banner */}
+      <section className="promo-banner">
+        <h2>Sparkling Jewelry, Just a Click Away</h2>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="footer">
+        <div className="footer-links">
+          <a href="/services">Services</a>
+          <a href="/categories">Categories</a>
+          <a href="/terms">Terms & Conditions</a>
+        </div>
+        <div className="copyright">
+          <p>© 2024 NHance. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };

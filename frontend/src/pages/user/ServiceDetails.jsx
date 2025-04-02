@@ -9,14 +9,12 @@ const ServiceDetails = () => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold text-purple-700 mb-4">Gold Polishing</h2>
-      <img src="/gold.jpg" alt="Service" className="rounded mb-4" />
+    <div className="container py-4" style={{ maxWidth: "700px" }}>
+      <h2 className="text-primary fw-bold mb-4">Gold Polishing</h2>
+      <img src="/gold.jpg" alt="Service" className="img-fluid rounded mb-3" />
       <p>This service includes detailed in-house cleaning of your gold jewellery using eco-safe polishing methods.</p>
-      <p className="mt-2 font-semibold">Approximate Price: ₹999</p>
-      <button onClick={handleBook} className="mt-4 bg-purple-600 text-white px-4 py-2 rounded">
-        Book Now
-      </button>
+      <p className="fw-semibold mt-2">Approximate Price: ₹999</p>
+      <button onClick={handleBook} className="btn btn-primary mt-3">Book Now</button>
     </div>
   );
 };

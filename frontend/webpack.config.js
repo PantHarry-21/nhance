@@ -1,33 +1,29 @@
-const path = require('path');  // Use CommonJS 'require'
+const path = require('path');
 
 module.exports = {
-  entry: './src/index.jsx',  // Main entry point for React app
+  entry: './src/main.jsx', // Ensure this is correct
   output: {
-    filename: 'bundle.js',  // Output file name
-    path: path.resolve(__dirname, 'dist'),  // Output directory
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js', // Ensure this is the final bundled file
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,  // JavaScript/JSX files
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: 'babel-loader',  // Use Babel to transpile JSX
+        use: 'babel-loader',
       },
       {
-        test: /\.css$/,  // CSS files
-        use: [
-          'style-loader',  // Inject styles into the DOM
-          'css-loader',    // Resolves CSS imports and dependencies
-        ],
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],  // Resolve .js and .jsx extensions
+    extensions: ['.js', '.jsx'],
   },
   devServer: {
-    static: './dist',  // Serve files from the 'dist' folder
-    port: 4000,  // Port for dev server
-    open: true,  // Automatically open the browser
+    static: path.join(__dirname, 'public'),
+    port: 3000,
   },
 };

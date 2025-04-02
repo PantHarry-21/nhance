@@ -1,15 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Route, Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({ children, allowedRoles }) => {
-  const token = localStorage.getItem("token");
-  const role = localStorage.getItem("role");
+const PrivateRoute = ({ allowedRoles, children }) => {
+  const userRole = localStorage.getItem('role'); // Replace with actual role logic
 
-  if (!token) {
-    return <Navigate to="/login" />;
-  }
-
-  if (allowedRoles && !allowedRoles.includes(role)) {
+  if (!allowedRoles.includes(userRole)) {
     return <Navigate to="/" />;
   }
 

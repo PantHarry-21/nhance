@@ -2,16 +2,20 @@ import React from "react";
 
 const PartnerDashboard = () => {
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4 text-purple-700">Welcome, Partner!</h2>
+    <div className="container py-4">
+      <h2 className="text-primary fw-bold mb-4">Welcome, Partner!</h2>
 
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="bg-white p-4 rounded shadow">📬 New Jobs</div>
-        <div className="bg-white p-4 rounded shadow">💰 Total Earnings</div>
+      <div className="row mb-4">
+        <div className="col-md-6 mb-3">
+          <div className="card p-3 shadow-sm">📬 New Jobs</div>
+        </div>
+        <div className="col-md-6 mb-3">
+          <div className="card p-3 shadow-sm">💰 Total Earnings</div>
+        </div>
       </div>
 
-      <div className="bg-white p-4 rounded shadow">
-        <h3 className="font-semibold mb-2">Live Status Tracker</h3>
+      <div className="card p-4 shadow-sm">
+        <h5 className="card-title mb-3">Live Status Tracker</h5>
         <p>[Progress bars or job cards go here]</p>
       </div>
     </div>

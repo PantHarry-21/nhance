@@ -24,16 +24,23 @@ const PartnerJobs = () => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4 text-purple-700">Assigned Jobs</h2>
+    <div className="container py-4">
+      <h2 className="text-primary fw-bold mb-4">Assigned Jobs</h2>
+
       {jobs.map((job) => (
-        <div key={job.id} className="bg-white p-4 rounded shadow mb-4">
-          <h3 className="font-semibold mb-2">{job.service_id}</h3>
+        <div key={job.id} className="card p-3 mb-4 shadow-sm">
+          <h5>{job.service_id}</h5>
           <p><strong>Status:</strong> {job.status}</p>
-          <div className="space-x-2 mt-2">
-            <button className="bg-yellow-500 text-white px-3 py-1 rounded" onClick={() => updateStatus(job.id, "on-the-way")}>On The Way</button>
-            <button className="bg-blue-600 text-white px-3 py-1 rounded" onClick={() => updateStatus(job.id, "started")}>Started</button>
-            <button className="bg-green-600 text-white px-3 py-1 rounded" onClick={() => updateStatus(job.id, "completed")}>Completed</button>
+          <div className="d-flex gap-2 flex-wrap">
+            <button className="btn btn-outline-primary btn-sm" onClick={() => updateStatus(job.id, "on the way")}>
+              On the Way
+            </button>
+            <button className="btn btn-outline-success btn-sm" onClick={() => updateStatus(job.id, "started")}>
+              Started
+            </button>
+            <button className="btn btn-outline-dark btn-sm" onClick={() => updateStatus(job.id, "completed")}>
+              Completed
+            </button>
           </div>
         </div>
       ))}
