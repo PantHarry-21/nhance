@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: './src/main.jsx', // Ensure this is correct
@@ -9,21 +10,35 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: "babel-loader",
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|mp4)$/i,
+        type: "asset/resource",
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html", // ✅ Make sure this file exists
+    }),
+  ],
   devServer: {
-    static: path.join(__dirname, 'public'),
+    static: {
+      directory: path.resolve(__dirname, "public"),
+    },
     port: 3000,
+    historyApiFallback: true, // ✅ This fixes reload on /login, /signup, etc.
+    open: true,
   },
+  mode: "development", // or "production" if you're building
 };

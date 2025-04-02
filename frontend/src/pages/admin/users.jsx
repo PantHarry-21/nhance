@@ -1,27 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Users = () => {
-  return (
-    <div className="container py-4">
-      <h2 className="text-primary fw-bold mb-4">Users & Partners</h2>
+  const [activeTab, setActiveTab] = useState("customers");
 
-      <div className="row">
-        <div className="col-md-6 mb-3">
-          <div className="card p-3 shadow-sm">
-            <h5>Customers</h5>
-            <p>[List of customers]</p>
-          </div>
-        </div>
-        <div className="col-md-6 mb-3">
-          <div className="card p-3 shadow-sm">
-            <div className="d-flex justify-content-between align-items-center mb-2">
-              <h5 className="mb-0">Partners</h5>
-              <button className="btn btn-sm btn-primary">Invite Partner</button>
-            </div>
-            <p>[List of partners]</p>
-          </div>
-        </div>
+  return (
+    <div className="p-4">
+      <h2 className="fw-bold">Users</h2>
+      <div className="d-flex gap-3 my-3">
+        <button
+          className={`btn ${activeTab === "customers" ? "btn-primary" : "btn-outline-primary"}`}
+          onClick={() => setActiveTab("customers")}
+        >
+          Customers
+        </button>
+        <button
+          className={`btn ${activeTab === "partners" ? "btn-primary" : "btn-outline-primary"}`}
+          onClick={() => setActiveTab("partners")}
+        >
+          Partners
+        </button>
       </div>
+
+      {activeTab === "customers" ? (
+        <p>List of Customers here.</p>
+      ) : (
+        <div>
+          <button className="btn btn-success mb-3">Invite Partner</button>
+          <p>List of Partners will show here.</p>
+        </div>
+      )}
     </div>
   );
 };
