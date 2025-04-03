@@ -1,0 +1,139 @@
+/* General Container */
+.container {
+  padding: 0 10%;
+}
+
+/* Hero Section Full Width */
+.hero-section {
+  background-color: #6d28d9; /* Purple */
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 4px solid #F9A826;
+  position: relative;
+}
+
+.hero-section .search-bar {
+  width: 50%;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.hero-section .login-register-btns {
+  margin-top: 20px;
+}
+
+.hero-section .logo {
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  width: 100px;
+}
+
+/* Services and Categories Section */
+.services-categories-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.categories-section {
+  width: 48%;
+}
+
+.featured-services-section {
+  width: 48%;
+}
+
+.category-card, .service-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category-card img, .service-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.category-card h4, .service-card h5 {
+  margin-top: 10px;
+}
+
+.category-card button, .service-card button {
+  margin-top: 10px;
+}
+
+.service-card {
+  text-align: center;
+  width: 48%;
+}
+
+.featured-services-section .service-card {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Promotional Banner */
+.promo-banner {
+  background-color: #F9A826;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Footer */
+.footer {
+  background-color: #6D28D9;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer .footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer .footer-links a:hover {
+  color: #F9A826; /* Highlight on hover */
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #F9A826;
+}
+.auth-bg {
+  background: linear-gradient(-45deg, #e0c3fc, #8ec5fc, #fbeaff, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
