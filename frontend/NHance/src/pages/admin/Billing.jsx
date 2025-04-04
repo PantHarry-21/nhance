@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import AdminLayout from '../layout/AdminLayout.jsx';
 import { Tabs, Tab, Table, Button, Form, Modal, Spinner } from 'react-bootstrap';
-import { fetchBillingHistory, fetchCoupons, createCoupon, deleteCoupon } from '../../services/billingApi';
+import { fetchBillingHistory, fetchCoupons, createCoupon, deleteCoupon } from '../../services/BillingApi.js';
 import { toast } from 'react-toastify';
 
 const Billing = () => {
