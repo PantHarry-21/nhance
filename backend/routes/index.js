@@ -1,31 +1,19 @@
-import express from "express";
-import { invitePartner } from "../controllers/admin.js";
-import { login } from "../controllers/auth.js";
-import {
-  createBooking,
-  getUserBookings,
-  updateBookingStatus,
-} from "../controllers/bookings.js";
-import {
-  registerPartner,
-  getAssignedJobs,
-} from "../controllers/partner.js";
+import express from 'express';
+import authRoutes from './auth.js';
+import categoryRoutes from './categories.js';
+import serviceRoutes from './services.js';
+import bookingRoutes from './booking.js';
+import billingRoutes from './billing.js';
+import userRoutes from './users.js';
+import partnerRoutes from './partners.js';
 
-const router = express.Router();
 
-// Auth
-router.post("/login", login);
-
-// Admin
-router.post("/admin/invite-partner", invitePartner);
-
-// Bookings
-router.post("/bookings/create", createBooking);
-router.get("/bookings/my/:email", getUserBookings);
-router.put("/bookings/status", updateBookingStatus);
-
-// Partner
-router.post("/partner/register", registerPartner);
-router.get("/partner/jobs/:email", getAssignedJobs);
-
-export default router;
+export default function registerRoutes(app) {
+  app.use('/api', authRoutes);            // Signup, Login, Auth
+  app.use('/api/categories', categoryRoutes);
+  app.use('/api/services', serviceRoutes);
+  app.use('/api/booking', bookingRoutes);
+  app.use('/api/billing', billingRoutes);
+  app.use('/api/users', userRoutes);
+  app.use('/api/partners', partnerRoutes);
+}
