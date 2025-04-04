@@ -7,20 +7,19 @@ export const fetchServices = async () => {
   return await res.json();
 };
 
-// Create a service (with FormData)
-export const createService = async (formData) => {
+export const createService = async (req, res) => {
   try {
-    const res = await fetch(`${API_BASE}/services`, {
-      method: 'POST',
-      body: formData // DO NOT add Content-Type when sending FormData
-    });
+    console.log("REQ.BODY:", req.body);
+    console.log("REQ.FILE:", req.file);
 
-    const result = await res.json();
-    if (!res.ok) throw new Error(result.error || 'Failed to create service');
-    return result;
+    const { name, price, category_id } = req.body;
+
+    if (!name) return res.status(400).json({ error: 'Missing service name' });
+
+    // continue insert...
   } catch (err) {
-    console.error("Create Service API error:", err);
-    return { error: err.message || 'Unknown error' };
+    console.error('Create Service Error:', err);
+    res.status(500).json({ error: 'Server error while creating service.' });
   }
 };
 
