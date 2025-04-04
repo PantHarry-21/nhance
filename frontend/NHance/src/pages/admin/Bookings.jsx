@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AdminLayout from '../layout/AdminLayout';
 import { Tabs, Tab, Table, Button, Spinner, Image, Form, Modal } from 'react-bootstrap';
 import { toast } from 'react-toastify';
-import { fetchNewBookings, fetchActiveBookings, fetchCompletedBookings, assignPartner, sendQuotation, fetchPartners, fetchCoupons } from '../../services/bookingApi';
+import { fetchNewBookings, fetchActiveBookings, fetchCompletedBookings, assignPartner, sendQuotation, fetchPartners, fetchCoupons } from '../../services/BookingApi';
 
 const Bookings = () => {
   const [key, setKey] = useState('new');
