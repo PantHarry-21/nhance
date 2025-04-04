@@ -5,7 +5,7 @@ import { Card, Row, Col, Spinner } from 'react-bootstrap';
 import { fetchServices } from '../../services/servicesApi';
 import { fetchCustomers, fetchPartners } from '../../services/userApi';
 import { fetchCategories } from '../../services/categoryApi';
-import { fetchCompletedBookings } from '../../services/bookingApi';
+import { fetchCompletedBookings } from '../../services/BookingApi';
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true);
