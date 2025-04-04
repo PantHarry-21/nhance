@@ -19,7 +19,7 @@ import Services from './pages/admin/Services';
 import CategoriesAdmin from './pages/admin/Categories';
 import Billing from './pages/admin/Billing';
 import AdminProfile from './pages/admin/Profile';
-import Users from './pages/admin/users';
+import Users from './pages/admin/Users';
 
 // Partner Pages
 import PartnerDashboard from './pages/partner/PartnerDashboard';
